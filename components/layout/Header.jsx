@@ -1,30 +1,31 @@
+import Link from "next/link";
 import Container from "@/components/ui/Container";
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-black/80 backdrop-blur-xl">
       <Container className="flex h-16 items-center justify-between">
-        <a
+        <Link
           href="/"
           className="text-lg font-semibold tracking-tight text-white"
           aria-label="GoyalSoft home"
         >
           GoyalSoft
-        </a>
+        </Link>
 
         <nav aria-label="Main navigation">
           <div className="flex items-center gap-6 text-sm text-zinc-400">
-            <a className="transition-colors hover:text-white" href="/projects">
+            <Link className="transition-colors hover:text-white" href="/projects">
               Projects
-            </a>
+            </Link>
 
-            <a className="transition-colors hover:text-white" href="/docs">
+            <Link className="transition-colors hover:text-white" href="/docs">
               Docs
-            </a>
+            </Link>
 
-            <a className="transition-colors hover:text-white" href="/blog">
+            <Link className="transition-colors hover:text-white" href="/blog">
               Blog
-            </a>
+            </Link>
           </div>
         </nav>
       </Container>

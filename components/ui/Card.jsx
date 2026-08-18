@@ -1,14 +1,16 @@
 import { cn } from "@/lib/utils/cn";
 
-export default function Container({
+export default function Card({
   children,
   className = "",
 }) {
   return (
     <div
       className={cn(
-        "mx-auto w-full max-w-7xl",
-        "px-4 sm:px-6 lg:px-8",
+        "rounded-2xl border border-zinc-800",
+        "bg-zinc-950/80",
+        "transition-colors duration-200",
+        "hover:border-zinc-700",
         className
       )}
     >

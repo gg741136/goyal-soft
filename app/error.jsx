@@ -9,7 +9,7 @@ export default function GlobalError({ reset }) {
         </p>
 
         <h1 className="mt-3 text-3xl font-semibold">
-          We couldn't load this page.
+          We couldn&apos;t load this page.
         </h1>
 
         <p className="mt-4 text-zinc-400">
