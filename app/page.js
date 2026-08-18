@@ -1,69 +1,194 @@
-import Image from "next/image";
+import Container from "@/components/ui/Container";
+import Button from "@/components/ui/Button";
 
-export default function Home() {
+const categories = [
+  {
+    title: "Projects",
+    description:
+      "Explore web, JavaScript, Python and Flutter projects.",
+    href: "/projects",
+  },
+  {
+    title: "Libraries",
+    description:
+      "Discover reusable libraries and developer packages.",
+    href: "/libraries",
+  },
+  {
+    title: "Frameworks",
+    description:
+      "Explore frameworks and development technologies.",
+    href: "/frameworks",
+  },
+  {
+    title: "Developer Tools",
+    description:
+      "Useful tools built for modern developers.",
+    href: "/tools",
+  },
+  {
+    title: "Documentation",
+    description:
+      "Detailed technical documentation and references.",
+    href: "/docs",
+  },
+  {
+    title: "Tutorials",
+    description:
+      "Learn development through practical tutorials.",
+    href: "/tutorials",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.js
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <section className="relative overflow-hidden">
+        <div className="hero-glow" />
+
+        <div className="goyal-grid absolute inset-0 opacity-50" />
+
+        <Container className="relative">
+          <div className="flex min-h-[720px] flex-col items-center justify-center py-24 text-center">
+            
+            <div className="mb-7 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-neutral-400">
+              Building the future of software
+            </div>
+
+            <h1 className="max-w-5xl text-5xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-6xl md:text-7xl lg:text-8xl">
+              Build.
+              <br />
+
+              <span className="gradient-text">
+                Learn. Explore.
+              </span>
+            </h1>
+
+            <p className="mt-7 max-w-2xl text-base leading-7 text-neutral-400 sm:text-lg">
+              GoyalSoft is a modern developer platform
+              for discovering projects, libraries,
+              frameworks, tools, documentation,
+              tutorials, extensions and open-source
+              software.
+            </p>
+
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Button href="/projects">
+                Explore projects
+              </Button>
+
+              <Button
+                href="/docs"
+                variant="secondary"
+              >
+                Explore documentation
+              </Button>
+            </div>
+
+            <div className="mt-20 grid w-full max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4">
+              {[
+                "Projects",
+                "Libraries",
+                "Extensions",
+                "Open Source",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="glass rounded-2xl p-5 text-left"
+                >
+                  <div className="mb-3 h-2 w-2 rounded-full bg-white" />
+
+                  <p className="text-sm font-medium">
+                    {item}
+                  </p>
+
+                  <p className="mt-1 text-xs text-neutral-600">
+                    Explore
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-24">
+        <Container>
+          <div className="mb-10">
+            <p className="mb-3 text-sm text-neutral-500">
+              The platform
+            </p>
+
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              Everything developers need.
+            </h2>
+
+            <p className="mt-4 max-w-2xl text-neutral-500">
+              Explore the different parts of the
+              GoyalSoft ecosystem.
+            </p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {categories.map((category) => (
+              <a
+                href={category.href}
+                key={category.title}
+                className="border-glow glass group rounded-3xl p-7"
+              >
+                <div className="mb-12 flex items-center justify-between">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-sm font-semibold">
+                    G
+                  </div>
+
+                  <span className="text-neutral-600 transition group-hover:translate-x-1 group-hover:text-white">
+                    →
+                  </span>
+                </div>
+
+                <h3 className="text-lg font-medium">
+                  {category.title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-6 text-neutral-500">
+                  {category.description}
+                </p>
+              </a>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-24">
+        <Container>
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] p-8 sm:p-12">
+            <div className="absolute -right-40 -top-40 h-80 w-80 rounded-full bg-white/[0.05] blur-3xl" />
+
+            <div className="relative max-w-2xl">
+              <p className="mb-3 text-sm text-neutral-500">
+                For developers
+              </p>
+
+              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+                Discover what GoyalSoft is building.
+              </h2>
+
+              <p className="mt-4 leading-7 text-neutral-500">
+                Browse software projects, developer
+                resources, technical documentation and
+                open-source work from the GoyalSoft
+                ecosystem.
+              </p>
+
+              <div className="mt-7">
+                <Button href="/projects">
+                  Explore GoyalSoft
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+    </>
   );
 }
